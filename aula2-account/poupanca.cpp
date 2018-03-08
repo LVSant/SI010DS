@@ -19,7 +19,7 @@ Poupanca::Poupanca(int accountNumber,
     valor negativo nesse parâmetro, então vamos atribuir zero. Observe
     atentamente a sintaxe desse if-then-else resumido.
    */
-  this->rate = ( rate < 0.0 ) ? 0.0 : rate;
+  this->rate = (rate < 0.0) ? 0.0 : rate;
 }
 
 
@@ -27,15 +27,19 @@ Poupanca::Poupanca(int accountNumber,
   Implemente a função abaixo. Lembre que não podemos acessar
   diretamente os atributos privados da classe base.
  */
-double Poupanca::calculateExtraIncome()
-{
-  // ToDo: implemente o corpo deste método.
-} 
+double Poupanca::calculateExtraIncome() {
+
+	if (this->rate > 0){
+		double income = getBalance() * rate;
+		income = income - getBalance();
+		setBalance(income);
+	}
+}
 
 /*
   O atributo "accountNumber" tem acessibilidade protected. Nesse caso,
   podemos acessar diretamente.
  */
 void Poupanca::setAccountNumber(int a){
-  // ToDo: implemente o corpo deste método.
+	this->accountNumber = a;
 }

@@ -24,7 +24,7 @@ class Account {
   acessíveis fora dela por meio dos métodos públicos ou protegidos. O
   acesso "protegido" permite que classes derivadas (apenas as
   derivadas) manipulem um membro sem a necessidade de acessar os
-  métodos da classe base.  
+  métodos da classe base.
 
   Se um membro da classe base é privado, então as classes derivadas
   precisarão acessá-los por intermédio dos membros públicos. O
@@ -38,13 +38,13 @@ class Account {
   2 - Deixar o membro protegido, permitindo a perda de consistência,
   caso a classe derivada inadvertidamente faça (ou deixe de fazer)
   alguma operação.
- */  
+ */
  private:
   double balance;
 
  protected :
   int accountNumber;
-  
+
  public:
   Account(int accountNumber = 0.0, double balance = 0.0);
   int getAccountNumber() const;
