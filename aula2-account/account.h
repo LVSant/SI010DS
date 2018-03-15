@@ -50,8 +50,8 @@ class Account {
   int getAccountNumber() const;
   double getBalance() const;
   void setBalance(double balance);
-  void credit(double amount);
-  void debit(double amount);
+  virtual void debit(double amount);
+  virtual void credit(double amount);
   void print() const;
 };
 

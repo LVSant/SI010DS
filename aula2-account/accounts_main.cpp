@@ -29,20 +29,22 @@ using namespace std;
 
 void printAccounts(Account** account, int size) {
   for (int i = 0; i < size; i++) {
-    cout <<  "Numero " << account.getAccountNumber << endl;
+    cout <<  "Numero " << account[i]->getAccountNumber() << endl;
   }
 }
 
 
 void debitAccounts(Account** account, int size, int debit) {
   for (int i = 0; i < size; i++) {
-    if(Corrente* c = dynamic_cast<Corrente*>(account)) {
-       c->debit(size);
-    }
+    account[i]->debit(size);
   }
 }
 
 void deleteAccounts(Account** account, int size){
+  for(int i = 0; i < size; i++){
+    delete account[i];
+  }
+
     /*
     ToDo: invoque a palavra reservada delete para todos os objetos.
    */
@@ -62,7 +64,7 @@ int main() {
   for (int i =0; i < NUM_ACCOUNTS; i++) {
     int tipo, numero, balance;
 
-    cout << "Tipo: (0: account, 1: poupanca, 2: coorente): ";
+    cout << "Tipo: (0: account, 1: poupanca, 2: corrente): ";
     cin  >> tipo;
     cout << "Número: ";
     cin  >> numero;
@@ -93,6 +95,7 @@ int main() {
   debitAccounts(accounts, NUM_ACCOUNTS, 30);
   printAccounts(accounts, NUM_ACCOUNTS);
   deleteAccounts(accounts, NUM_ACCOUNTS);
+
   return 0;
 }
 
