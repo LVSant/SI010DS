@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+/exercicio1/exercise_1_serial_killers/dist/
+/exercicio1/exercise_1_serial_killers/build/

@@ -7,7 +7,7 @@ class Account {
   int accountNumber;
 
  public:
-  Account(int accountNumber = 0.0, double balance = 0.0);
+   Account(int accountNumber = 0.0, double balance = 0.0);
   int getAccountNumber() const;
   double getBalance() const;
   void setBalance(double balance);

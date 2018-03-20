@@ -1,0 +1,15 @@
+SerialKillers
+
+tipos de serial killer:
+
+SerialKillerShooter
+	- Matam atirando
+SerialKillerStabber
+	- Matam furando/cortando
+
+atributos:
+- nome
+- pais de atuacao
+- total de vitimas
+- arma preferida
+
