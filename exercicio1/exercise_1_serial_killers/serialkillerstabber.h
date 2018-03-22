@@ -10,11 +10,10 @@
 #ifndef SERIALKILLERSTABBER_H
 #define SERIALKILLERSTABBER_H
 
-class serialkillerstabber {
+class serialkillerstabber : public SerialKiller {
 public:
-    serialkillerstabber();
+    serialkillerstabber(string name, string country, string favoriteWeapon, int totalVictims);
     serialkillerstabber(const serialkillerstabber& orig);
-    virtual ~serialkillerstabber();
 private:
 
 };

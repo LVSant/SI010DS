@@ -24,9 +24,6 @@ public:
 
     SerialKiller(string name, string country, string favoriteWeapon, int totalVictims);
 
-
-    SerialKiller(const SerialKiller &obj);
-
     int getHash(int max_number) const;
 
     string GetCountry() const;

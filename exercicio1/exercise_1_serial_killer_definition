@@ -7,9 +7,10 @@ SerialKillerShooter
 SerialKillerStabber
 	- Matam furando/cortando
 
-atributos:
-- nome
-- pais de atuacao
-- total de vitimas
-- arma preferida
 
+atributos:
+- nome (...)
+- pais de atuacao (Belgica, Peninsula Iberica, Brasil, ...)
+- padrao de vitima (todos os segundos filhos de mulheres solteiras, )
+- total de vitimas (mais de 1000)
+- arma preferida (faca, revolver, espada, colher, jacare, materiais medicos, bare hands, ...)

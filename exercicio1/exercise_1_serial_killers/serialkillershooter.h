@@ -12,9 +12,8 @@
 
 class serialkillershooter : public SerialKiller {
 public:
-    serialkillershooter();
+    serialkillershooter(string name, string country, string favoriteWeapon, int totalVictims);
     serialkillershooter(const serialkillershooter& orig);
-    virtual ~serialkillershooter();
 private:
 
 };

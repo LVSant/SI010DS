@@ -5,15 +5,10 @@
  * Created on March 19, 2018, 10:26 PM
  */
 
-#include "serialkiller.h"
 #include "serialkillershooter.h"
 
-serialkillershooter::serialkillershooter() {
+serialkillershooter::serialkillershooter(string name, string country, string favoriteWeapon, int totalVictims) :
+SerialKiller(name, country, favoriteWeapon, totalVictims) {
 }
 
-serialkillershooter::serialkillershooter(const serialkillershooter& orig) {
-}
-
-serialkillershooter::~serialkillershooter() {
-}
 
