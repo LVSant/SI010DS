@@ -22,16 +22,36 @@
  * THE SOFTWARE.
  */
 /* 
- * File:   serialkillershooter.cpp
+ * File:   hash.h
  * Author: devl
- * 
- * Created on March 19, 2018, 10:26 PM
+ *
+ * Created on March 21, 2018, 10:20 PM
  */
 
-#include "serialkillershooter.h"
+#include "serialkiller.h"
 
-serialkillershooter::serialkillershooter(string name, string country, string favoriteWeapon, int totalVictims) :
-SerialKiller(name, country, favoriteWeapon, totalVictims) {
-}
+#ifndef HASH_H
+#define HASH_H
 
+class Hash {
+private:
+    int MAX_ITENS;
+    int length;
+    SerialKiller **serialkillersDataset;
+
+public:
+    Hash(const Hash& orig);
+
+    Hash(int size = 20);
+
+    int getLength() const;
+    void retrieveItem(SerialKiller& serialKiller, bool& found);
+    void insertItem(SerialKiller serialkiller);
+    void deleteItem(SerialKiller serialkiller);
+    
+    void print() const;
+
+};
+
+#endif /* HASH_H */
 
