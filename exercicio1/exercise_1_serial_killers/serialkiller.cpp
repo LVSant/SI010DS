@@ -47,7 +47,7 @@ int SerialKiller::GetTotalVictims() const {
     return totalVictims;
 }
 
-#define MAGIC_NUMBER  5
+#define MAGIC_NUMBER   6997
 
 int SerialKiller::getHash(int max_number) const {
     int result = 0;
