@@ -1,0 +1,21 @@
+0 piso((x-1) / 2)
+
+2 x
+
+5 filho da esquerda 2*x+1
+6 filho da direita 2*x+2
+
+
+
+
+				0
+			1		2
+		3	4		5	6
+
+
+
+
+Operacao de subida:
+Usamos a operação de subida quando a chave desse nó é maior do que a chave do seu nó pai.
+
+

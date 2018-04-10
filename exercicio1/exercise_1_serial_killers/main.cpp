@@ -45,11 +45,16 @@ int main(int argc, char** argv) {
     Hash hash;
     hash.print(); //should be empty
 
-    SerialKiller sk = SerialKiller("name1", "New Zealand", "knife", 52);
+    SerialKiller sk = SerialKiller("maria", "NY", "knife", 1);
     hash.insertItem(sk);
 
-    SerialKiller skshooter = serialkillershooter("name2-shooter", "USA", "AR15", 17);
+    SerialKiller skshooter = serialkillershooter("mariaa", "NY", "AR15", 2);
     hash.insertItem(skshooter);
+
+    hash.print();
+    hash.deleteItem(skshooter);
+    hash.print();
+
 
     SerialKiller skstabber = serialkillerstabber("name3-stabber", "France", "Couteau", 98);
     hash.insertItem(skstabber);
@@ -59,6 +64,7 @@ int main(int argc, char** argv) {
 
     SerialKiller skstabber2 = serialkillerstabber("name5-stabber", "Marrocco", "Explosives", 132);
     hash.insertItem(skstabber2);
+
 
     hash.print();
     return 0;

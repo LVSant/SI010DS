@@ -32,3 +32,7 @@
 *.app
 /exercicio1/exercise_1_serial_killers/dist/
 /exercicio1/exercise_1_serial_killers/build/
+/exercicio1/aula5-heap/build/
+/exercicio1/aula5-heap/dist/
+/exercise_2_heap/build/
+/exercise_2_heap/dist/

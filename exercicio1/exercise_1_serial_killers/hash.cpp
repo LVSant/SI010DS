@@ -53,18 +53,19 @@ void Hash::print() const {
     for (int i = 0; i < MAX_ITENS; i++) {
         SerialKiller* sk = serialkillersDataset[i];
         if (sk != NULL) {
-            std::cout << i << ":" << sk->GetName() << ", " << sk->GetCountry() << std::endl;
+            std::cout << i << ":" << sk->GetName() << ", " << sk->GetCountry() << ", Victims: " << sk->GetTotalVictims() << std::endl;
         }
     }
     std::cout << "FIM" << std::endl;
 }
 
 //this is a poor solution, and was only implemented because we cant use bucket yet
+
 void Hash::insertItem(SerialKiller serialkiller) {
     int location = serialkiller.getHash(MAX_ITENS);
-    while (serialkillersDataset[location] != NULL && location <= MAX_ITENS) {   //while position isnt empty and location isn't bigger than MAX_ITENS
-        location++;                                                             //make location go further searching for an empty place
-    }           
+    while (serialkillersDataset[location] != NULL && location <= MAX_ITENS) { //while position isnt empty and location isn't bigger than MAX_ITENS
+        location++; //make location go further searching for an empty place
+    }
     serialkillersDataset[location] = new SerialKiller(serialkiller);
     length++;
 }
@@ -73,7 +74,7 @@ void Hash::deleteItem(SerialKiller serialkiller) {
     int location = serialkiller.getHash(MAX_ITENS);
     delete serialkillersDataset[location]; //destroys the object instance
     serialkillersDataset[location] = NULL; //set null to the location that was the object
-    length--; //remove one from the length of our dataset
+    length--; 
 }
 
 void Hash::retrieveItem(SerialKiller& serialKiller, bool& found) {
