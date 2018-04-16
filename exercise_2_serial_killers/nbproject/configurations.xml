@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>heap.h</itemPath>
       <itemPath>serialkiller.h</itemPath>
       <itemPath>serialkillershooter.h</itemPath>
       <itemPath>serialkillerstabber.h</itemPath>
@@ -15,7 +16,11 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>heap.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
+      <itemPath>serialkiller.cpp</itemPath>
+      <itemPath>serialkillershooter.cpp</itemPath>
+      <itemPath>serialkillerstabber.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -39,11 +44,21 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="heap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="heap.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="serialkiller.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="serialkiller.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="serialkillershooter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="serialkillershooter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="serialkillerstabber.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="serialkillerstabber.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -68,11 +83,21 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="heap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="heap.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="serialkiller.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="serialkiller.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="serialkillershooter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="serialkillershooter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="serialkillerstabber.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="serialkillerstabber.h" ex="false" tool="3" flavor2="0">
       </item>

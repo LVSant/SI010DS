@@ -35,7 +35,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/heap.o \
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/serialkiller.o \
+	${OBJECTDIR}/serialkillershooter.o \
+	${OBJECTDIR}/serialkillerstabber.o
 
 
 # C Compiler Flags
@@ -62,10 +66,30 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/exercise_2_serial_killers: ${OBJECTFI
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/exercise_2_serial_killers ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/heap.o: heap.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/heap.o heap.cpp
+
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/serialkiller.o: serialkiller.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/serialkiller.o serialkiller.cpp
+
+${OBJECTDIR}/serialkillershooter.o: serialkillershooter.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/serialkillershooter.o serialkillershooter.cpp
+
+${OBJECTDIR}/serialkillerstabber.o: serialkillerstabber.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/serialkillerstabber.o serialkillerstabber.cpp
 
 # Subprojects
 .build-subprojects:
