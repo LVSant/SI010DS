@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=exercise_2_heap
+PROJECTNAME=exercise_2_serial_killers
 
 # Active Configuration
 DEFAULTCONF=Debug

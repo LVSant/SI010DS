@@ -13,18 +13,15 @@
 
 Heap::Heap(int MAX_ITEMS, Account* ARRAY_ACCOUNT, int NUM_IN_ARRAY_ACCOUNT) {
     this->MAX_ITEMS = MAX_ITEMS;
-    //    this->cadastro = ARRAY_ACCOUNT;
     this->length = NUM_IN_ARRAY_ACCOUNT;
-
 
     for (int i = 0; i < length; i++) {
         cadastro[i] = &ARRAY_ACCOUNT[i];
     }
 
-
-    //    for (int i = (length / 2) - 1; i >= 0; i--) {
-    //        descida(length, 0);
-    //    }
+    for (int i = (length / 2) - 1; i >= 0; i--) {
+        descida(i, 0);
+    }
 
 }
 
@@ -32,14 +29,13 @@ Heap::Heap(int MAX_ITEMS) {
     this->MAX_ITEMS = MAX_ITEMS;
     this->length = 0;
     cadastro = new Account*[MAX_ITEMS];
-
 }
 
 Account* Heap::dequeue() {
     Account* account = cadastro[0];
-    cadastro[0] = cadastro[length - 1];
     length--;
-    descida(length, 0);
+    cadastro[0] = cadastro[length];
+    descida(0, 0);
     return account;
 }
 
@@ -69,35 +65,15 @@ void Heap::subida(int root, int index) {
     }
 }
 
-/*
-   void descida(Heap *h, int m) {
-    int j = 2*m+1;
-    int x = h->chaves[m];
-    while (j< h->tam) {
-      if ((j< h->tam -1) && h->chaves[j]< h->chaves[j+1])
-       j++;
-       if (x < h->chaves[j]) {
-         h->vetor[m] = h->vetor[j];
-         m = j;
-         j = 2*m + 1;
-       } else break;
-    }
-    h->chaves[m] = x;
- }
- */
-
 void Heap::descida(int index, int bottom) {
 
-
+    int maior = index;
     int leftChild = (2 * index) + 1;
     int rightChild = (2 * index) + 2;
 
-    int maior = index;
-
-    if (leftChild <= bottom && cadastro[leftChild] > cadastro[index]) {
+    if (leftChild <= length && cadastro[leftChild]->getPriority() > cadastro[index]->getPriority()) {
         maior = leftChild;
-    }
-    if (rightChild <= bottom && cadastro[rightChild] > cadastro[maior]) {
+    } else if (rightChild <= length && cadastro[rightChild]->getPriority() > cadastro[maior]->getPriority()) {
         maior = rightChild;
     }
 
@@ -105,10 +81,9 @@ void Heap::descida(int index, int bottom) {
         Account * account = cadastro[index];
         cadastro[index] = cadastro[maior];
         cadastro[maior] = account;
-        descida(maior, bottom);
+        descida(index, 0);
     }
 }
-
 
 bool Heap::isEmpty() const {
     return length == 0;
