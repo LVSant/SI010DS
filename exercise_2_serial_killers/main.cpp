@@ -69,41 +69,40 @@ serialkillershooter* insertSerialKillerShooter() {
 }
 
 int main() {
-    /* 
-    Heap heap;
-    heap.print();
+    /*
+        Heap heap;
+        heap.print();
 
-      string names[7] = {"Tadhg Meino", "Ina Hamlet", "Stefans Nadiya", "Vitalia Rhona", "Yasamin Marciano", "Nedeljka Mladenka", "Nathan Fungi"};
-     string countries[7] = {"France", "Italy", "Brazil", "Cuba", "Russia", "Vietnam", "Singapore"};
-     string weapon[7] = {"knife", "bassebal bat", "Ar15", "car", "hands", "poison", "gas"};
-     double victims[7] = {18, 4, 20, 10, 15, 9, 1};
+        string names[7] = {"Tadhg Meino", "Ina Hamlet", "Stefans Nadiya", "Vitalia Rhona", "Yasamin Marciano", "Nedeljka Mladenka", "Nathan Fungi"};
+        string countries[7] = {"France", "Italy", "Brazil", "Cuba", "Russia", "Vietnam", "Singapore"};
+        string weapon[7] = {"knife", "bassebal bat", "Ar15", "car", "hands", "poison", "gas"};
+        double victims[7] = {14, 1, 20, 11, 17, 21, 1};
 
-     for (int i = 0; i < 4; i++) {
-         SerialKiller* sk = new SerialKiller(names[i], countries[i], weapon[i], victims[i]);
-         heap.enqueue(sk);
-     }
+        for (int i = 0; i < 4; i++) {
+            SerialKiller* sk = new SerialKiller(names[i], countries[i], weapon[i], victims[i]);
+            heap.enqueue(sk);
+        }
 
-     for (int i = 4; i < 7; i++) {
-         SerialKiller* sk = new serialkillershooter(names[i], countries[i], weapon[i], victims[i]);
-         heap.enqueue(sk);
-     }
+        for (int i = 4; i < 7; i++) {
+            SerialKiller* sk = new serialkillershooter(names[i], countries[i], weapon[i], victims[i]);
+            heap.enqueue(sk);
+        }
 
-     heap.print();
+        heap.print();
 
-     cout << "------------------------------" << endl;
+        cout << "------------------------------" << endl;
 
-     for (int i = 0; i < 7; i++) {
-         SerialKiller *sk = heap.dequeue();
-         std::cout << "Maior: " << sk->getPriority() << std::endl;
-         heap.print();
-     }
-    
-     heap.~Heap();
+        for (int i = 0; i < 7; i++) {
+            SerialKiller *sk = heap.dequeue();
+            std::cout << "Maior: " << sk->getPriority() << std::endl;
+            heap.print();
+        }
      */
 
 
-    Heap heap;
 
+
+    Heap heap;
     int total = 0;
     int assassinType = 1;
 

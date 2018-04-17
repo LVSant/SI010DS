@@ -45,7 +45,6 @@ SerialKiller* Heap::dequeue() {
 }
 
 void Heap::enqueue(SerialKiller* newItem) {
-
     if (!isFull()) {
         cadastro[length] = newItem;
         subida(0, length);
@@ -59,14 +58,16 @@ void Heap::subida(int root, int index) {
         return;
     }
 
-    int noPai = ((index - 1) / 2);
-    //     verifica se a posicao INDEX do vetor é maior que a posicao do pai
-    //     caso seja maior faz a troca dos valores 
-    if (cadastro[index]->getPriority() > cadastro[noPai]->getPriority()) {
-        SerialKiller* account = cadastro[index];
-        cadastro[index] = cadastro[noPai];
-        cadastro[noPai] = account;
-        subida(0, noPai);
+    if (!isEmpty()) {
+        int noPai = ((index - 1) / 2);
+        //     verifica se a posicao INDEX do vetor é maior que a posicao do pai
+        //     caso seja maior faz a troca dos valores 
+        if (cadastro[index]->getPriority() > cadastro[noPai]->getPriority()) {
+            SerialKiller* account = cadastro[index];
+            cadastro[index] = cadastro[noPai];
+            cadastro[noPai] = account;
+            subida(0, noPai);
+        }
     }
 }
 
@@ -78,7 +79,8 @@ void Heap::descida(int index, int bottom) {
 
     if (leftChild <= length && cadastro[leftChild]->getPriority() > cadastro[index]->getPriority()) {
         maior = leftChild;
-    } else if (rightChild <= length && cadastro[rightChild]->getPriority() > cadastro[maior]->getPriority()) {
+    }
+    if (rightChild <= length && cadastro[rightChild]->getPriority() > cadastro[maior]->getPriority()) {
         maior = rightChild;
     }
 
@@ -86,7 +88,7 @@ void Heap::descida(int index, int bottom) {
         SerialKiller * account = cadastro[index];
         cadastro[index] = cadastro[maior];
         cadastro[maior] = account;
-        descida(index, 0);
+        descida(maior, 0);
     }
 }
 
@@ -106,8 +108,8 @@ void Heap::print() const {
     for (int i = 0; i < length; i++) {
         std::cout
                 << " Serial Killer: " << cadastro[i]->getName()
-                << " Origin: " << cadastro[i]->getCountry()
-                << " Favorite Weapon: " << cadastro[i]->getFavoriteWeapon()
-                << " Priority: " << cadastro[i]->getPriority() << std::endl;
+                << ", Origin: " << cadastro[i]->getCountry()
+                << ", Favorite Weapon: " << cadastro[i]->getFavoriteWeapon()
+                << ", Priority: " << cadastro[i]->getPriority() << std::endl;
     }
 }
