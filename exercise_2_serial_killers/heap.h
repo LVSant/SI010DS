@@ -21,8 +21,8 @@
 class Heap {
 public:
     Heap(const Heap& orig);
-    Heap(int MAX_ITEMS = 10);
-    Heap(int MAX_ITEMS, SerialKiller* ARRAY_ACCOUNT, int NUM_IN_ARRAY_ACCOUNT);
+    Heap(int MAX_ITEMS = 21);
+    Heap(int MAX_ITEMS, SerialKiller** ARRAY_ACCOUNT, int NUM_IN_ARRAY_ACCOUNT);
 
     bool isEmpty() const;
     bool isFull() const;

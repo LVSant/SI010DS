@@ -12,12 +12,13 @@
 #include "serialkiller.h"
 #include "heap.h"
 
-Heap::Heap(int MAX_ITEMS, SerialKiller* ARRAY_ACCOUNT, int NUM_IN_ARRAY_ACCOUNT) {
+Heap::Heap(int MAX_ITEMS, SerialKiller** ARRAY_ACCOUNT, int NUM_IN_ARRAY_ACCOUNT) {
     this->MAX_ITEMS = MAX_ITEMS;
     this->length = NUM_IN_ARRAY_ACCOUNT;
-
+    this->cadastro = new SerialKiller*[MAX_ITEMS];
+    
     for (int i = 0; i < length; i++) {
-        cadastro[i] = &ARRAY_ACCOUNT[i];
+        cadastro[i] = ARRAY_ACCOUNT[i];
     }
 
     for (int i = (length / 2) - 1; i >= 0; i--) {
